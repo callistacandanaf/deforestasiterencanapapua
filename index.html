@@ -1,0 +1,778 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Deforestasi Papua — Dokumenter interaktif tentang kehilangan hutan tropis terakhir Indonesia dan ancaman terhadap kehidupan masyarakat adat Papua.">
+<meta name="keywords" content="deforestasi Papua, hutan tropis, sawit Papua, masyarakat adat, lingkungan hidup">
+<meta property="og:title" content="Papua Sedang Kehilangan Hutannya">
+<meta property="og:description" content="Dokumenter interaktif tentang krisis deforestasi di Papua.">
+<title>Papua Sedang Kehilangan Hutannya — Dokumenter Deforestasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Papua Documentary</div>
+  <div class="loader-line"></div>
+  <div class="loader-text">Memuat kisah hutan terakhir...</div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Papua Hutan</a>
+  <ul class="nav-links">
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#data">Data</a></li>
+    <li><a href="#causes">Penyebab</a></li>
+    <li><a href="#dampak">Dampak</a></li>
+    <li><a href="#dokumenter">Dokumenter</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#solusi">Solusi</a></li>
+    <li><a href="#cta">Aksi</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">Tentang</a>
+  <a href="#data" onclick="closeMenu()">Data</a>
+  <a href="#causes" onclick="closeMenu()">Penyebab</a>
+  <a href="#dampak" onclick="closeMenu()">Dampak</a>
+  <a href="#dokumenter" onclick="closeMenu()">Dokumenter</a>
+  <a href="#timeline" onclick="closeMenu()">Timeline</a>
+  <a href="#solusi" onclick="closeMenu()">Solusi</a>
+  <a href="#cta" onclick="closeMenu()">Aksi</a>
+</div>
+
+<!-- HERO SECTION -->
+<section id="hero" role="banner">
+  <div class="hero-video-bg">
+    <img
+      src="assets/images/hero-01.jpg"
+      alt="Masyarakat adat Papua di tengah hutan tropis"
+      class="hero-bg-img"
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;pointer-events:none;"
+    >
+    <div class="forest-particles" id="forestParticles"></div>
+    <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="fg1" cx="30%" cy="80%"><stop offset="0%" stop-color="#2d8a4e" stop-opacity="0.6"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+        <radialGradient id="fg2" cx="70%" cy="70%"><stop offset="0%" stop-color="#1a5c35" stop-opacity="0.5"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#fg1)"/>
+      <rect width="100%" height="100%" fill="url(#fg2)"/>
+    </svg>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-bar-top"></div>
+  <div class="hero-content" id="heroContent">
+    <span class="hero-label">🌿 Deforestasi Terencana · Papua</span>
+    <h1 class="hero-title">Papua Sedang<br>Kehilangan<br>Hutannya</h1>
+    <p class="hero-subtitle">Deforestasi mengancam hutan tropis terakhir Indonesia dan kehidupan masyarakat adat Papua yang telah menjaga bumi ini selama ribuan tahun.</p>
+    <div class="hero-btns">
+      <a href="#about" class="btn-primary"><span>Pelajari Lebih Lanjut</span></a>
+      <a href="#data" class="btn-secondary">Lihat Data</a>
+      <a href="#dokumenter" class="btn-secondary">🎬 Tonton Dokumenter</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span class="scroll-text">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT DEFORESTATION -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal-left">
+        <span class="section-label">01 — Apa Itu Deforestasi?</span>
+        <h2 class="section-title" id="about-title">Kehilangan yang Tak Bisa<br>Dikembalikan</h2>
+        <p class="section-body">Deforestasi adalah proses penebangan dan pembersihan kawasan hutan secara masif untuk dialihfungsikan menjadi lahan pertanian, perkebunan, pertambangan, atau infrastruktur. Papua, yang menyimpan lebih dari separuh hutan tersisa Indonesia, kini menghadapi ancaman terbesar dalam sejarahnya.</p>
+        <p class="section-body" style="margin-top:16px">Setiap menit, ribuan pohon ditebang. Setiap hari, spesies unik kehilangan habitatnya. Setiap tahun, masyarakat adat kehilangan tanah leluhur mereka.</p>
+        <div class="cause-cards" style="margin-top:36px">
+          <div class="cause-card reveal delay-1">
+            <div class="cause-icon">🌴</div>
+            <h4>Perkebunan Sawit</h4>
+            <p>Ekspansi kelapa sawit menjadi ancaman terbesar. Ratusan ribu hektar hutan dikonversi setiap tahun.</p>
+          </div>
+          <div class="cause-card reveal delay-2">
+            <div class="cause-icon">⛏️</div>
+            <h4>Pertambangan</h4>
+            <p>Konsesi tambang emas, tembaga, dan batu bara membuka kawasan hutan yang sebelumnya terisolasi.</p>
+          </div>
+          <div class="cause-card reveal delay-3">
+            <div class="cause-icon">🌾</div>
+            <h4>Food Estate</h4>
+            <p>Program lumbung pangan skala mega mengancam hutan basah dan lahan gambut Papua.</p>
+          </div>
+          <div class="cause-card reveal delay-4">
+            <div class="cause-icon">🏗️</div>
+            <h4>Infrastruktur</h4>
+            <p>Pembangunan jalan dan kawasan industri membuka akses ke wilayah hutan terdalam.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right delay-2">
+        <div class="about-visual">
+          <div class="about-visual-inner"></div>
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5" preserveAspectRatio="xMidYMid slice">
+            <!-- Forest silhouette -->
+            <defs>
+              <linearGradient id="treeGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#2d8a4e"/>
+                <stop offset="100%" stop-color="#0a2e1a"/>
+              </linearGradient>
+            </defs>
+            <!-- Trees left -->
+            <polygon points="40,350 70,200 100,350" fill="url(#treeGrad)"/>
+            <polygon points="60,350 100,160 140,350" fill="#1a5c35"/>
+            <polygon points="120,350 155,190 190,350" fill="url(#treeGrad)"/>
+            <polygon points="0,350 30,220 60,350" fill="#0f3d22"/>
+            <!-- Trees right -->
+            <polygon points="280,350 310,180 340,350" fill="url(#treeGrad)"/>
+            <polygon points="310,350 345,150 380,350" fill="#1a5c35"/>
+            <polygon points="350,350 385,200 420,350" fill="url(#treeGrad)"/>
+            <!-- Ground -->
+            <rect x="0" y="340" width="500" height="160" fill="#1a0a05" opacity="0.7"/>
+            <!-- Mist -->
+            <ellipse cx="200" cy="300" rx="200" ry="40" fill="rgba(200,220,200,0.06)"/>
+            <ellipse cx="200" cy="280" rx="160" ry="30" fill="rgba(200,220,200,0.04)"/>
+          </svg>
+          <div class="about-badge">
+            <div class="about-badge-num">32,02 Jt</div>
+            <div class="about-badge-label">Hektare hutan Papua yang tersisa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA & FAKTA -->
+<section id="data" aria-labelledby="data-title">
+  <div class="container">
+    <div class="data-header reveal">
+      <span class="section-label">02 — Data & Fakta</span>
+      <h2 class="section-title" id="data-title">Angka yang<br>Berbicara Keras</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card reveal delay-1">
+        <div class="stat-num" data-target="687000" data-suffix="">0</div>
+        <div class="stat-unit">Hektare</div>
+        <div class="stat-label">Hutan primer yang hilang di Papua akibat deforestasi masif</div>
+      </div>
+      <div class="stat-card reveal delay-2">
+        <div class="stat-num" data-target="1" data-decimal="true" data-suffix="Jt">0</div>
+        <div class="stat-unit">Hektare</div>
+        <div class="stat-label">Kawasan hutan dilepas untuk kepentingan korporasi</div>
+      </div>
+      <div class="stat-card reveal delay-3">
+        <div class="stat-num" data-target="168471" data-suffix="">0</div>
+        <div class="stat-unit">Hektare</div>
+        <div class="stat-label">Hutan dikonversi menjadi perkebunan sawit aktif</div>
+      </div>
+    </div>
+    <div class="infographic reveal">
+      <div>
+        <span class="section-label">Proporsi Hilang</span>
+        <h3 class="infographic-label">Perbandingan<br>Tutupan Hutan</h3>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-top:12px">Dalam dua dekade terakhir, Papua kehilangan tutupan hutan dengan laju yang mengkhawatirkan. Tanpa intervensi serius, separuh hutan Papua bisa hilang pada 2050.</p>
+      </div>
+      <div class="progress-bars">
+        <div class="progress-item">
+          <div class="progress-name"><span>Hutan Primer Tersisa</span><span>62%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="62"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-name"><span>Area Terancam Deforestasi</span><span>28%</span></div>
+          <div class="progress-track"><div class="progress-fill red" data-width="28"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-name"><span>Konsesi Aktif di Kawasan Hutan</span><span>45%</span></div>
+          <div class="progress-track"><div class="progress-fill red" data-width="45"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-name"><span>Kawasan Terlindungi Efektif</span><span>35%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="35"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-name"><span>Lahan Adat yang Diakui</span><span>18%</span></div>
+          <div class="progress-track"><div class="progress-fill" data-width="18"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PENYEBAB (Horizontal Storytelling) -->
+<section id="causes">
+  <div class="causes-title-section">
+    <span class="section-label reveal">03 — Penyebab Utama</span>
+    <h2 class="section-title reveal">Siapa yang<br>Menghancurkan Hutan?</h2>
+  </div>
+  <div class="causes-scroll">
+    <div class="cause-panel reveal">
+      <div class="cause-panel-bg sawit">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.15" preserveAspectRatio="xMidYMid slice">
+          <pattern id="palmPattern" x="0" y="0" width="60" height="80" patternUnits="userSpaceOnUse">
+            <path d="M30,70 L30,30 M30,30 Q20,15 5,20 M30,30 Q40,15 55,20 M30,30 Q15,20 10,5 M30,30 Q45,20 50,5" stroke="#2d8a4e" stroke-width="1.5" fill="none"/>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#palmPattern)"/>
+        </svg>
+      </div>
+      <div class="cause-panel-overlay"></div>
+      <div class="cause-panel-content">
+        <div class="cause-num">01</div>
+        <div class="cause-tag">Ancaman Utama</div>
+        <h3>Perkebunan<br>Kelapa Sawit</h3>
+        <p>Ekspansi perkebunan sawit telah menghancurkan ratusan ribu hektar hutan Papua. Perusahaan-perusahaan besar mendapat konsesi dengan proses perizinan yang tidak transparan.</p>
+        <div class="cause-stat">168.471 ha<small>hutan dikonversi jadi sawit</small></div>
+      </div>
+    </div>
+    <div class="cause-panel reveal delay-2">
+      <div class="cause-panel-bg food">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.1" preserveAspectRatio="xMidYMid slice">
+          <pattern id="gridPat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="40" height="40" fill="none" stroke="#a05a2c" stroke-width="0.5"/>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#gridPat)"/>
+        </svg>
+      </div>
+      <div class="cause-panel-overlay"></div>
+      <div class="cause-panel-content">
+        <div class="cause-num">02</div>
+        <div class="cause-tag">Program Pemerintah</div>
+        <h3>Food Estate<br>Papua</h3>
+        <p>Program lumbung pangan nasional dirancang tanpa konsultasi masyarakat adat. Jutaan hektare hutan gambut dan hutan hujan tropis terancam dikonversi.</p>
+        <div class="cause-stat">1,2 Jt ha<small>target lahan food estate Papua</small></div>
+      </div>
+    </div>
+    <div class="cause-panel reveal delay-3">
+      <div class="cause-panel-bg tambang">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.12" preserveAspectRatio="xMidYMid slice">
+          <pattern id="hexPat" x="0" y="0" width="50" height="43" patternUnits="userSpaceOnUse">
+            <polygon points="25,2 48,14 48,39 25,51 2,39 2,14" fill="none" stroke="#6b3a8e" stroke-width="0.8"/>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#hexPat)"/>
+        </svg>
+      </div>
+      <div class="cause-panel-overlay"></div>
+      <div class="cause-panel-content">
+        <div class="cause-num">03</div>
+        <div class="cause-tag">Industri Ekstraktif</div>
+        <h3>Pertambangan<br>Skala Besar</h3>
+        <p>Freeport, Grasberg, dan puluhan konsesi tambang lainnya telah menciptakan kerusakan ekologis yang masif dan meninggalkan limbah beracun di sungai-sungai Papua.</p>
+        <div class="cause-stat">7,3 Jt ha<small>total konsesi tambang di Papua</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAMPAK -->
+<section id="dampak">
+  <div class="container">
+    <div class="dampak-header">
+      <span class="section-label reveal">04 — Dampak Nyata</span>
+      <h2 class="section-title reveal">Konsekuensi yang<br>Menghantam Semua</h2>
+    </div>
+    <div class="dampak-grid">
+      <div class="dampak-card reveal delay-1">
+        <span class="dampak-icon">🦜</span>
+        <h3>Hilangnya Habitat Satwa</h3>
+        <p>Cenderawasih, kanguru pohon, dan ratusan spesies endemik Papua kehilangan rumah mereka. Papua menyimpan 30% spesies burung unik dunia yang kini terancam punah.</p>
+      </div>
+      <div class="dampak-card danger reveal delay-2">
+        <span class="dampak-icon">🌡️</span>
+        <h3>Krisis Iklim</h3>
+        <p>Hutan Papua menyimpan 7,7 miliar ton karbon. Deforestasi melepas karbon masif ke atmosfer, memperparah pemanasan global yang mengancam seluruh umat manusia.</p>
+      </div>
+      <div class="dampak-card danger reveal delay-3">
+        <span class="dampak-icon">⚖️</span>
+        <h3>Konflik Tanah Adat</h3>
+        <p>Ribuan warga adat menghadapi penggusuran paksa dari tanah leluhur tanpa kompensasi layak. Konflik agraria terus meningkat di seluruh wilayah Papua.</p>
+      </div>
+      <div class="dampak-card reveal delay-4">
+        <span class="dampak-icon">🏺</span>
+        <h3>Ancaman Budaya</h3>
+        <p>Lebih dari 300 suku adat Papua memiliki ikatan spiritual dengan hutan. Ketika hutan hilang, tradisi, bahasa, dan pengetahuan lokal turut terancam punah.</p>
+      </div>
+      <div class="dampak-card danger reveal delay-5">
+        <span class="dampak-icon">🌊</span>
+        <h3>Banjir dan Longsor</h3>
+        <p>Pembabatan hutan menghilangkan fungsi perlindungan DAS. Banjir bandang dan longsor semakin sering terjadi, menghancurkan permukiman dan lahan pertanian rakyat.</p>
+      </div>
+      <div class="dampak-card reveal delay-1">
+        <span class="dampak-icon">💧</span>
+        <h3>Pencemaran Air</h3>
+        <p>Limbah tambang dan perkebunan mencemari ratusan sungai di Papua yang menjadi sumber kehidupan masyarakat. Air bersih semakin sulit didapat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MASYARAKAT ADAT -->
+<section id="masyarakat" aria-label="Masyarakat Adat Papua">
+  <div class="masyarakat-visual">
+    <div class="papua-pattern"></div>
+    <div class="masyarakat-art"></div>
+    <!-- Foto masyarakat adat dengan fade -->
+    <img
+      src="foto/hero-01.jpg"
+      alt="Masyarakat adat Papua di hutan"
+      class="masyarakat-photo"
+      loading="lazy"
+    />
+    <div class="masyarakat-photo-fade"></div>
+    <div class="masyarakat-visual-overlay"></div>
+  </div>
+  <div class="masyarakat-content">
+    <span class="section-label reveal">05 — Suara Masyarakat Adat</span>
+    <h2 class="section-title reveal">Penjaga Hutan<br>yang Dilupakan</h2>
+    <div class="blockquote reveal">
+      <p>"Hutan adalah rumah dan warisan bagi generasi kami. Ketika hutan hilang, kami kehilangan diri kami sendiri."</p>
+      <cite>— Tokoh Adat Suku Mee, Papua Tengah</cite>
+    </div>
+    <p class="section-body reveal delay-2">Lebih dari 300 suku adat di Papua telah menjaga ekosistem hutan selama ribuan tahun menggunakan kearifan lokal yang teruji. Mereka bukan hambatan pembangunan — mereka adalah solusi nyata untuk krisis iklim global.</p>
+    <p class="section-body reveal delay-3" style="margin-top:16px">Namun suara mereka diabaikan dalam setiap proses pengambilan keputusan. Tanah leluhur diklaim tanpa persetujuan. Hutan spiritual ditebangi tanpa ampun.</p>
+  </div>
+</section>
+
+<!-- SECTION DOKUMENTER & INVESTIGASI -->
+<section id="dokumenter">
+  <div class="container">
+    <div class="dok-header reveal">
+      <span class="section-label">06 — Dokumenter & Investigasi</span>
+      <h2 class="section-title">Saksikan Sendiri<br>Kebenaran di Lapangan</h2>
+      <p class="section-body reveal delay-1" style="margin:0 auto;text-align:center;max-width:600px">Dokumenter ini membahas bagaimana pembangunan, investasi, dan pembukaan lahan memengaruhi hutan Papua serta kehidupan masyarakat adat di sekitarnya.</p>
+    </div>
+    <div class="dok-main reveal">
+      <div class="dok-video-wrap">
+        <iframe
+          id="dokIframe"
+          src="https://www.youtube.com/embed/p-AurGR-Ghk?rel=0&modestbranding=1"
+          title="Dokumenter Deforestasi Papua"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="dok-info">
+        <div class="dok-tag">📹 Investigasi Lapangan</div>
+        <h3>Deforestasi Papua:<br>Antara Pembangunan dan Kehancuran</h3>
+        <p>Dokumenter investigasi yang mengungkap fakta di balik pembukaan hutan Papua — dari izin industri, ekspansi sawit, hingga dampaknya terhadap masyarakat adat yang telah menjaga hutan selama ribuan tahun.</p>
+        <div class="dok-topics">
+          <span class="dok-topic">🚁 Footage Drone Papua</span>
+          <span class="dok-topic">🎤 Wawancara Masyarakat Adat</span>
+          <span class="dok-topic">🔍 Investigasi Izin Industri</span>
+          <span class="dok-topic">🌳 Dokumentasi Pembukaan Hutan</span>
+          <span class="dok-topic">🏛️ Pendapat Pemerintah</span>
+          <span class="dok-topic">✊ Suara Aktivis Lingkungan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="container">
+    <div class="timeline-header">
+      <span class="section-label reveal">07 — Kronologi</span>
+      <h2 class="section-title reveal">Timeline<br>Kehancuran</h2>
+    </div>
+    <div class="timeline-line">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2000</div>
+          <div class="timeline-title">Era Otonomi & Ekspansi Korporasi</div>
+          <p class="timeline-desc">Otonomi khusus Papua diberlakukan. Konsesi perkebunan sawit dan tambang mulai masuk secara besar-besaran. Deforestasi meningkat tajam setelah era reformasi.</p>
+        </div>
+      </div>
+      <div class="timeline-item danger reveal delay-1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2011–2019</div>
+          <div class="timeline-title">Puncak Kehilangan Hutan</div>
+          <p class="timeline-desc">Papua kehilangan lebih dari 500.000 hektar hutan primer. Greenpeace melaporkan 168.471 hektar hutan berubah jadi kebun sawit. Konflik adat meningkat drastis.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal delay-2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-title">Proyek Food Estate Dimulai</div>
+          <p class="timeline-desc">Program Food Estate di Merauke dan Sorong dimulai. Jutaan hektar hutan dan lahan gambut masuk dalam target konversi. Protes keras dari masyarakat adat dan NGO lingkungan.</p>
+        </div>
+      </div>
+      <div class="timeline-item danger reveal delay-3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-title">Peringatan Darurat Iklim</div>
+          <p class="timeline-desc">Laporan CIFOR dan Forest Watch Indonesia: laju deforestasi Papua meningkat 40% dari dekade sebelumnya. Hampir 1 juta hektar kawasan hutan dilepaskan dari status perlindungan.</p>
+        </div>
+      </div>
+      <div class="timeline-item danger reveal delay-4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2025–2026</div>
+          <div class="timeline-title">Krisis yang Terus Berlanjut</div>
+          <p class="timeline-desc">Ekspansi infrastruktur dan konsesi baru terus membuka hutan Papua. Masyarakat internasional mulai menekan Indonesia untuk moratorium deforestasi yang lebih kuat dan terverifikasi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE AFTER SLIDER -->
+<section id="comparison">
+  <div class="container">
+    <div class="comparison-header">
+      <span class="section-label reveal">07 — Perbandingan Visual</span>
+      <h2 class="section-title reveal">Sebelum & Sesudah<br>Penebangan</h2>
+      <p class="section-body reveal delay-1" style="margin:0 auto;text-align:center;max-width:500px">Geser slider untuk melihat perubahan dramatis tutupan hutan Papua sebelum dan sesudah deforestasi masif.</p>
+    </div>
+    <div class="ba-slider-wrap reveal">
+      <div class="ba-slider" id="baSlider">
+        <!-- BEFORE (healthy forest) -->
+        <div class="ba-after">
+          <div class="ba-after-bg"></div>
+          <svg style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0a2e1a"/>
+                <stop offset="60%" stop-color="#1a5c35"/>
+                <stop offset="100%" stop-color="#0f3d22"/>
+              </linearGradient>
+              <linearGradient id="treeG2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#2d8a4e"/>
+                <stop offset="100%" stop-color="#0a2e1a"/>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#skyG)"/>
+            <!-- Dense canopy -->
+            <ellipse cx="100" cy="200" rx="120" ry="90" fill="#1a5c35"/>
+            <ellipse cx="200" cy="180" rx="110" ry="85" fill="#2d8a4e"/>
+            <ellipse cx="300" cy="195" rx="130" ry="95" fill="#1a5c35"/>
+            <ellipse cx="420" cy="185" rx="115" ry="88" fill="#2d8a4e"/>
+            <ellipse cx="550" cy="200" rx="125" ry="92" fill="#1a5c35"/>
+            <ellipse cx="680" cy="188" rx="118" ry="88" fill="#2d8a4e"/>
+            <ellipse cx="800" cy="205" rx="120" ry="92" fill="#1a5c35"/>
+            <!-- Layer 2 -->
+            <ellipse cx="50" cy="280" rx="100" ry="75" fill="#0f3d22"/>
+            <ellipse cx="160" cy="265" rx="115" ry="78" fill="#1a5c35"/>
+            <ellipse cx="280" cy="275" rx="120" ry="80" fill="#0f3d22"/>
+            <ellipse cx="400" cy="268" rx="110" ry="76" fill="#1a5c35"/>
+            <ellipse cx="520" cy="278" rx="118" ry="79" fill="#0f3d22"/>
+            <ellipse cx="650" cy="270" rx="113" ry="77" fill="#1a5c35"/>
+            <ellipse cx="780" cy="280" rx="120" ry="80" fill="#0f3d22"/>
+            <!-- Ground -->
+            <rect x="0" y="380" width="900" height="120" fill="#0a2e1a"/>
+            <!-- Mist layer -->
+            <rect x="0" y="330" width="900" height="60" fill="rgba(220,240,225,0.04)"/>
+            <!-- River -->
+            <path d="M 0 420 Q 200 410 400 425 Q 600 440 900 415" stroke="#1a5c9e" stroke-width="8" fill="none" opacity="0.5"/>
+          </svg>
+          <span class="ba-label left">🌳 HUTAN ASLI</span>
+        </div>
+        <!-- AFTER (deforested) -->
+        <div class="ba-clip" style="width:50%" id="baClip">
+          <div class="ba-before">
+            <div class="ba-before-bg"></div>
+            <svg style="position:absolute;inset:0;width:900px;height:100%;min-width:100%" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="burnG" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#5a3010"/>
+                  <stop offset="50%" stop-color="#8b4513"/>
+                  <stop offset="100%" stop-color="#3d1a08"/>
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#burnG)"/>
+              <!-- Barren land -->
+              <rect x="0" y="300" width="900" height="200" fill="#3d2010"/>
+              <!-- Bare stumps -->
+              <rect x="60" y="260" width="20" height="50" fill="#2d1508" rx="2"/>
+              <rect x="150" y="250" width="18" height="55" fill="#2d1508" rx="2"/>
+              <rect x="240" y="255" width="22" height="50" fill="#2d1508" rx="2"/>
+              <rect x="350" y="248" width="20" height="57" fill="#2d1508" rx="2"/>
+              <rect x="450" y="258" width="19" height="48" fill="#2d1508" rx="2"/>
+              <rect x="560" y="252" width="21" height="53" fill="#2d1508" rx="2"/>
+              <rect x="660" y="260" width="18" height="50" fill="#2d1508" rx="2"/>
+              <rect x="760" y="255" width="22" height="52" fill="#2d1508" rx="2"/>
+              <!-- Palm plantation rows -->
+              <g opacity="0.6">
+                <line x1="0" y1="350" x2="900" y2="350" stroke="#5a3520" stroke-width="1"/>
+                <line x1="0" y1="380" x2="900" y2="380" stroke="#5a3520" stroke-width="1"/>
+                <line x1="0" y1="410" x2="900" y2="410" stroke="#5a3520" stroke-width="1"/>
+                <line x1="100" y1="300" x2="100" y2="500" stroke="#5a3520" stroke-width="1"/>
+                <line x1="200" y1="300" x2="200" y2="500" stroke="#5a3520" stroke-width="1"/>
+                <line x1="300" y1="300" x2="300" y2="500" stroke="#5a3520" stroke-width="1"/>
+                <line x1="400" y1="300" x2="400" y2="500" stroke="#5a3520" stroke-width="1"/>
+                <line x1="500" y1="300" x2="500" y2="500" stroke="#5a3520" stroke-width="1"/>
+                <line x1="600" y1="300" x2="600" y2="500" stroke="#5a3520" stroke-width="1"/>
+                <line x1="700" y1="300" x2="700" y2="500" stroke="#5a3520" stroke-width="1"/>
+                <line x1="800" y1="300" x2="800" y2="500" stroke="#5a3520" stroke-width="1"/>
+              </g>
+              <!-- Smoke/haze -->
+              <rect x="0" y="200" width="900" height="100" fill="rgba(180,100,50,0.08)"/>
+              <!-- Hazy sky -->
+              <rect x="0" y="0" width="900" height="260" fill="rgba(120,80,40,0.15)"/>
+            </svg>
+            <span class="ba-label right" style="right:24px">🪵 PASCA PENEBANGAN</span>
+          </div>
+        </div>
+        <!-- DIVIDER -->
+        <div class="ba-divider" id="baDivider">
+          <div class="ba-handle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5">
+              <path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE COUNTER -->
+<section id="live-counter" aria-label="Penghitung Real-time Hutan Hilang">
+  <div class="pulse-ring"></div>
+  <div class="pulse-ring"></div>
+  <div class="pulse-ring"></div>
+  <div class="container" style="position:relative;z-index:1;text-align:center">
+    <span class="section-label reveal" style="color:rgba(255,255,255,0.6)">Live Simulation</span>
+    <h2 class="section-title reveal" style="margin-bottom:0">Hutan Hilang Saat Ini</h2>
+    <div class="counter-display" id="liveCounter">0</div>
+    <div class="counter-sub">Hektare Hutan Hilang Sejak Anda Membuka Halaman Ini</div>
+    <div class="counter-note reveal delay-2">Simulasi berdasarkan rata-rata laju deforestasi hutan Papua sekitar 0,5–1 hektar per menit. Data aktual mengacu pada laporan CIFOR dan Forest Watch Indonesia.</div>
+  </div>
+</section>
+
+<!-- SECTION KEBIJAKAN PEMERINTAH -->
+<section id="kebijakan">
+  <div class="container">
+    <div class="kebijakan-header reveal">
+      <span class="section-label">05b — Peran Kebijakan</span>
+      <h2 class="section-title">Izin, Investasi, dan<br>Pelepasan Kawasan Hutan</h2>
+    </div>
+    <div class="split-screen reveal">
+      <div class="split-side split-gov">
+        <div class="split-tag">🏛️ Perspektif Pemerintah</div>
+        <h3>Pembangunan untuk Kemakmuran</h3>
+        <ul class="split-list">
+          <li>Percepatan pembangunan ekonomi Papua</li>
+          <li>Penciptaan lapangan kerja bagi masyarakat lokal</li>
+          <li>Investasi nasional untuk ketahanan pangan</li>
+          <li>Infrastruktur sebagai fondasi kemajuan</li>
+          <li>Proyek Strategis Nasional untuk pemerataan</li>
+        </ul>
+      </div>
+      <div class="split-divider">
+        <div class="split-divider-line"></div>
+        <div class="split-divider-icon">⚖️</div>
+        <div class="split-divider-line"></div>
+      </div>
+      <div class="split-side split-critic">
+        <div class="split-tag danger-tag">🌿 Perspektif Masyarakat Adat & Aktivis</div>
+        <h3>Ancaman yang Tak Terlihat</h3>
+        <ul class="split-list">
+          <li>Transparansi izin usaha yang dipertanyakan</li>
+          <li>Dampak ekologis jangka panjang yang diabaikan</li>
+          <li>Perlindungan tanah adat yang lemah</li>
+          <li>Konsultasi masyarakat yang tidak bermakna</li>
+          <li>Hilangnya hutan primer yang tak tergantikan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION BRUTO VS NETTO -->
+<section id="bruto-netto">
+  <div class="container">
+    <div class="bn-header reveal">
+      <span class="section-label">06b — Analisis Data</span>
+      <h2 class="section-title">Deforestasi Bruto<br>vs Netto</h2>
+    </div>
+    <div class="bn-grid">
+      <div class="bn-card bn-bruto reveal delay-1">
+        <div class="bn-icon">📉</div>
+        <h3>Deforestasi Bruto</h3>
+        <div class="bn-num">15 Jt ha</div>
+        <p>Total keseluruhan hutan yang hilang tanpa memperhitungkan pertumbuhan hutan baru. Angka ini mencerminkan skala nyata kehancuran ekosistem hutan Papua.</p>
+        <div class="bn-bar-wrap">
+          <div class="bn-bar" data-width="85"></div>
+        </div>
+      </div>
+      <div class="bn-card bn-netto reveal delay-2">
+        <div class="bn-icon">📊</div>
+        <h3>Deforestasi Netto</h3>
+        <div class="bn-num">~8 Jt ha</div>
+        <p>Selisih antara hutan yang hilang dan hutan yang tumbuh kembali. Angka ini sering digunakan pemerintah, namun dikritik karena menyembunyikan hilangnya hutan primer.</p>
+        <div class="bn-bar-wrap">
+          <div class="bn-bar bn-bar-yellow" data-width="50"></div>
+        </div>
+      </div>
+    </div>
+    <div class="bn-note reveal delay-3">
+      <div class="bn-note-icon">⚠️</div>
+      <p>"Sebagian aktivis menilai angka netto tidak sepenuhnya menggambarkan hilangnya hutan primer Papua karena hutan tanaman industri tidak dapat menggantikan ekosistem alami yang telah terbentuk selama ribuan tahun."</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION SOLUSI & HARAPAN -->
+<section id="solusi">
+  <div class="container">
+    <div class="solusi-header reveal">
+      <span class="section-label">10 — Solusi & Harapan</span>
+      <h2 class="section-title">Masih Ada Jalan<br>untuk Berubah</h2>
+      <p class="section-body reveal delay-1" style="margin:0 auto;text-align:center;max-width:600px">Pembangunan seharusnya tidak mengorbankan hutan yang menjadi kehidupan masyarakat Papua. Ada solusi yang memungkinkan keduanya berjalan beriringan.</p>
+    </div>
+    <div class="solusi-grid">
+      <div class="solusi-card reveal delay-1">
+        <div class="solusi-icon">🛡️</div>
+        <h3>Perlindungan Hutan Adat</h3>
+        <p>Pengakuan legal atas wilayah adat dan hutan komunal sebagai benteng pertahanan terakhir hutan Papua dari ekspansi industri.</p>
+      </div>
+      <div class="solusi-card reveal delay-2">
+        <div class="solusi-icon">📋</div>
+        <h3>Evaluasi Izin Industri</h3>
+        <p>Audit menyeluruh terhadap izin usaha yang telah diterbitkan, dengan moratorium izin baru di kawasan hutan primer dan gambut.</p>
+      </div>
+      <div class="solusi-card reveal delay-3">
+        <div class="solusi-icon">🌱</div>
+        <h3>Reboisasi Berbasis Adat</h3>
+        <p>Program pemulihan hutan yang melibatkan masyarakat adat sebagai pelaku utama, menggunakan spesies lokal dan kearifan tradisional.</p>
+      </div>
+      <div class="solusi-card reveal delay-4">
+        <div class="solusi-icon">⚖️</div>
+        <h3>Penegakan Hukum Lingkungan</h3>
+        <p>Penguatan regulasi dan penegakan hukum terhadap pelanggaran lingkungan, termasuk sanksi tegas bagi korporasi yang merusak hutan.</p>
+      </div>
+      <div class="solusi-card reveal delay-5">
+        <div class="solusi-icon">🤝</div>
+        <h3>Pembangunan Berkelanjutan</h3>
+        <p>Model pembangunan yang mengintegrasikan kelestarian ekosistem, hak masyarakat adat, dan pertumbuhan ekonomi secara bersamaan.</p>
+      </div>
+      <div class="solusi-card reveal delay-1">
+        <div class="solusi-icon">🌍</div>
+        <h3>Kolaborasi Internasional</h3>
+        <p>Kerjasama dengan lembaga internasional untuk pendanaan konservasi, transfer teknologi hijau, dan pengawasan independen.</p>
+      </div>
+    </div>
+    <div class="solusi-quote reveal">
+      <p>"Pembangunan seharusnya tidak menghilangkan hutan yang menjadi kehidupan masyarakat Papua. Kita bisa membangun tanpa menghancurkan."</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION PROFIL KELOMPOK -->
+<section id="profil">
+  <div class="container">
+    <div class="profil-header reveal">
+      <span class="section-label">Tim Peneliti</span>
+      <h2 class="section-title">Profil Kelompok 1</h2>
+      <p class="section-body reveal delay-1" style="margin:0 auto;text-align:center;max-width:500px">Dokumenter investigasi ini disusun oleh tim mahasiswa yang peduli terhadap isu lingkungan dan keadilan sosial di Papua.</p>
+    </div>
+    <div class="profil-grid">
+      <div class="profil-card reveal delay-1">
+        <div class="profil-avatar">06</div>
+        <div class="profil-num"></div>
+        <h3>Aqeel Mufazzal</h3>
+        <p>Peneliti &amp; Analis Data</p>
+      </div>
+      <div class="profil-card reveal delay-2">
+        <div class="profil-avatar">27</div>
+        <div class="profil-num"></div>
+        <h3>Nabila</h3>
+        <p>Penulis &amp; Narator</p>
+      </div>
+      <div class="profil-card reveal delay-3">
+        <div class="profil-avatar">30</div>
+        <div class="profil-num"></div>
+        <h3>Panji Suluh M</h3>
+        <p>Desainer &amp; Pengembang</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section id="cta">
+  <canvas id="ctaCanvas" class="cta-particles" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+  <div class="cta-content container">
+    <div class="cta-tag reveal">Saatnya Bertindak</div>
+    <h2 class="cta-title reveal">Hutan Papua<br>Butuh Suaramu</h2>
+    <p class="cta-subtitle reveal delay-1">Setiap tindakan kecil berarti. Dukung gerakan pelestarian hutan Papua dan masyarakat adat yang menjaganya.</p>
+    <div class="cta-btns reveal delay-2">
+      <a href="https://www.greenpeace.org/indonesia/" target="_blank" rel="noopener" class="btn-primary"><span>Dukung Greenpeace</span></a>
+      <a href="https://www.walhi.or.id/" target="_blank" rel="noopener" class="btn-secondary">Bergabung Gerakan</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Papua Hutan</span>
+        <p class="footer-desc">Dokumenter interaktif tentang krisis deforestasi di Papua dan perjuangan masyarakat adat untuk mempertahankan tanah leluhur mereka.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#data">Data</a></li>
+          <li><a href="#causes">Penyebab</a></li>
+          <li><a href="#dampak">Dampak</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sumber Data</h4>
+        <ul>
+          <li><a href="https://www.greenpeace.org/indonesia/" target="_blank" rel="noopener">Greenpeace Indonesia</a></li>
+          <li><a href="https://www.walhi.or.id/" target="_blank" rel="noopener">WALHI</a></li>
+          <li><a href="https://www.cifor.org/" target="_blank" rel="noopener">CIFOR</a></li>
+          <li><a href="https://www.globalforestwatch.org/" target="_blank" rel="noopener">Global Forest Watch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ikuti Kami</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter / X</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Papua Hutan Documentary. Dibuat untuk kesadaran lingkungan.</span>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+        <a href="#" class="social-icon" aria-label="Twitter">TW</a>
+        <a href="#" class="social-icon" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
